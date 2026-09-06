@@ -37,6 +37,10 @@ h2{font:800 clamp(22px,2.6vw,30px) Manrope;letter-spacing:-.02em;color:var(--ink
 .fchip{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:9999px;padding:9px 14px;font:700 13px Manrope;color:var(--ink);white-space:nowrap} .fchip .material-symbols-outlined{font-size:18px;color:var(--faint)}
 .fchip.on{background:var(--chip);border-color:var(--chipline);color:var(--purple)}
 .toolbar .spacer{flex:1}
+.toolbar .tsep{width:1px;height:26px;background:var(--line);margin:0 4px}
+.toolbar.sp{border-bottom:none;padding:8px 0 0;margin:14px 0 0}
+.fchip.travel{border-color:var(--chipline)}
+body.notes .fchip.travel{box-shadow:0 0 0 2px #f6e2c2}
 .mapbtn{position:relative;display:inline-flex;align-items:center;gap:7px;background:var(--purple);color:#fff;border:none;border-radius:9999px;padding:10px 18px;font:800 13px Manrope;cursor:pointer;text-decoration:none}
 .mapbtn i{width:8px;height:8px;border-radius:50%;background:#7bdcb5;display:inline-block;box-shadow:0 0 0 0 rgba(123,220,181,.7);animation:pulse 1.8s infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(123,220,181,.6)}70%{box-shadow:0 0 0 9px rgba(123,220,181,0)}100%{box-shadow:0 0 0 0 rgba(123,220,181,0)}}
@@ -88,6 +92,7 @@ footer.site{background:#fff;border-top:1px solid rgba(4,0,17,.08);margin-top:cla
 <span class="n blk" style="margin:10px auto;max-width:1200px;padding:0 clamp(20px,4vw,48px)">Site search is a form submission. It always lands on /search/, never on a pillar. Section 6.</span>
 
 <main>
+<span class="n blk" style="margin:10px auto 0;max-width:1200px;padding:0 clamp(20px,4vw,48px)">FILTER BAR: the four ringed controls, Price, Make &amp; Model, Length and Location, are the same component as the Home hero search. Their state travels with the user across Home, both pillars, the split view and the $5M collection. Type, Year and Sort sit after the divider and are catalog only.</span>
 
 <!-- ═══════════════ YACHTS PILLAR ═══════════════ -->
 <section class="view" id="v-y"><div class="wrap">
@@ -97,16 +102,20 @@ footer.site{background:#fff;border-top:1px solid rgba(4,0,17,.08);margin-top:cla
   <span class="n blk stop">NO COPY BETWEEN THE H1 AND THE TOOLBAR. First viewport is breadcrumb, H1, toolbar, count, grid. Descriptive copy lives in the lower block. Section 3.</span>
 
   <div class="toolbar">
+    <span class="fchip travel">Price<span class="material-symbols-outlined">expand_more</span></span>
+    <span class="fchip travel">Make &amp; Model<span class="material-symbols-outlined">expand_more</span></span>
+    <span class="fchip travel">Length<span class="material-symbols-outlined">expand_more</span></span>
+    <span class="fchip travel">Location<span class="material-symbols-outlined">expand_more</span></span>
+    <span class="tsep"></span>
     <span class="fchip">Type<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="fchip">Make &amp; Model<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="fchip">Length<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="fchip">Price<span class="material-symbols-outlined">expand_more</span></span>
     <span class="fchip">Year<span class="material-symbols-outlined">expand_more</span></span>
     <span class="fchip">Sort<span class="material-symbols-outlined">expand_more</span></span>
     <span class="spacer"></span>
     <a class="mapbtn" href="/search/" id="mapY"><i></i><span class="material-symbols-outlined">map</span>Map</a>
   </div>
-  <span class="n blk">Six controls: Type, Make &amp; Model, Length, Price, Year, Sort. Filter state is client state. It never enters the URL, never becomes an anchor, never reaches a sitemap. Section 4.</span>
+  <span class="n blk">SAME BAR AS HOME. Price, Make &amp; Model, Length and Location are the identical component in the identical order, and the user's selections travel with them from Home into the pillar and on into the split view. One shared state, one shared control. Section 4.</span>
+  <span class="n blk">Type, Year and Sort are catalog only refinements and sit after the divider. They do not exist on Home so nothing travels into them.</span>
+  <span class="n blk">Home SUBMITS the bar and lands on /search/. A pillar FILTERS IN PLACE. Either way the state is client state: never in the URL, never an anchor, never in a sitemap.</span>
   <span class="n blk">Map is the page's one authored pre-filtered link, to /search/?… carrying the current filters, noindex follow. The pulsing dot runs until that viewer opens the map once, stored per browser. Static under prefers-reduced-motion.</span>
   <span class="n blk stop">The pillar renders NO map pane. No map library, tile or request before first paint. Gate G6.</span>
 
@@ -154,8 +163,16 @@ footer.site{background:#fff;border-top:1px solid rgba(4,0,17,.08);margin-top:cla
   <span class="n blk stop">Neither pillar borrows the other's noun in a heading. No Yachts for Sale H2 and no yacht worded block on this page. Gate G3.</span>
 
   <div class="toolbar">
-    <span class="fchip">Type<span class="material-symbols-outlined">expand_more</span></span><span class="fchip">Make &amp; Model<span class="material-symbols-outlined">expand_more</span></span><span class="fchip">Length<span class="material-symbols-outlined">expand_more</span></span><span class="fchip">Price<span class="material-symbols-outlined">expand_more</span></span><span class="fchip">Year<span class="material-symbols-outlined">expand_more</span></span><span class="fchip">Sort<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="spacer"></span><a class="mapbtn" href="/search/"><i></i><span class="material-symbols-outlined">map</span>Map</a>
+    <span class="fchip travel">Price<span class="material-symbols-outlined">expand_more</span></span>
+    <span class="fchip travel">Make &amp; Model<span class="material-symbols-outlined">expand_more</span></span>
+    <span class="fchip travel">Length<span class="material-symbols-outlined">expand_more</span></span>
+    <span class="fchip travel">Location<span class="material-symbols-outlined">expand_more</span></span>
+    <span class="tsep"></span>
+    <span class="fchip">Type<span class="material-symbols-outlined">expand_more</span></span>
+    <span class="fchip">Year<span class="material-symbols-outlined">expand_more</span></span>
+    <span class="fchip">Sort<span class="material-symbols-outlined">expand_more</span></span>
+    <span class="spacer"></span>
+    <a class="mapbtn" href="/search/"><i></i><span class="material-symbols-outlined">map</span>Map</a>
   </div>
   <p class="count">612 boats for sale</p>
   <ul class="grid">
@@ -199,6 +216,17 @@ footer.site{background:#fff;border-top:1px solid rgba(4,0,17,.08);margin-top:cla
       <span class="n blk">ONE H1. It names the entity the user arrived at. Filters, sort, pan and zoom never rewrite it. Zoom level never drives it. Section 6.</span>
       <a class="about" href="/miami-fl-yachts-for-sale/">Learn more about Miami, FL<span class="material-symbols-outlined">arrow_forward</span></a>
       <span class="n blk">The only on-site door to the location page. Everything else on this surface stays in the split view.</span>
+      <div class="toolbar sp">
+        <span class="fchip travel on">Price<span class="material-symbols-outlined">expand_more</span></span>
+        <span class="fchip travel">Make &amp; Model<span class="material-symbols-outlined">expand_more</span></span>
+        <span class="fchip travel on">Length<span class="material-symbols-outlined">expand_more</span></span>
+        <span class="fchip travel on">Location<span class="material-symbols-outlined">expand_more</span></span>
+        <span class="tsep"></span>
+        <span class="fchip on">Type<span class="material-symbols-outlined">expand_more</span></span>
+        <span class="fchip">Year<span class="material-symbols-outlined">expand_more</span></span>
+        <span class="fchip">Sort<span class="material-symbols-outlined">expand_more</span></span>
+      </div>
+      <span class="n blk">The same bar again, arriving with whatever the user set on Home or on the pillar. Nothing resets on the way in.</span>
       <div class="chips"><span class="chipx">Miami, FL<span class="material-symbols-outlined">close</span></span><span class="chipx">Flybridge<span class="material-symbols-outlined">close</span></span><span class="chipx">$1M – $5M<span class="material-symbols-outlined">close</span></span><span class="chipx">50–80 ft<span class="material-symbols-outlined">close</span></span></div>
       <span class="n blk">Active filters and the selected place render as chips above the cards in the left column, not on the filter bar. Clearing the place chip drops the H1 to Yachts for Sale.</span>
       <ul class="grid two">
@@ -228,6 +256,19 @@ footer.site{background:#fff;border-top:1px solid rgba(4,0,17,.08);margin-top:cla
   <span class="n blk">index, follow, self canonical, out of every XML sitemap. Drops to noindex, follow if it holds under 20 listings for 30 days. Section 7.</span>
   <span class="n blk">Eligibility: verified current list price at or above $5,000,000 USD from the same normalised price source as the catalog. Hidden price hulls qualify on internal price and render Contact for Pricing. Membership refreshes daily. No curation, no paid placement.</span>
   <span class="n blk stop">NO RESULT COUNT above the grid and no aggregate count in schema.</span>
+  <div class="toolbar">
+    <span class="fchip travel">Price<span class="material-symbols-outlined">expand_more</span></span>
+    <span class="fchip travel">Make &amp; Model<span class="material-symbols-outlined">expand_more</span></span>
+    <span class="fchip travel">Length<span class="material-symbols-outlined">expand_more</span></span>
+    <span class="fchip travel">Location<span class="material-symbols-outlined">expand_more</span></span>
+    <span class="tsep"></span>
+    <span class="fchip">Type<span class="material-symbols-outlined">expand_more</span></span>
+    <span class="fchip">Year<span class="material-symbols-outlined">expand_more</span></span>
+    <span class="fchip">Sort<span class="material-symbols-outlined">expand_more</span></span>
+    <span class="spacer"></span>
+    <a class="mapbtn" href="/search/"><i></i><span class="material-symbols-outlined">map</span>Map</a>
+  </div>
+  <span class="n blk">The same bar. It refines inside the collection and never widens it: the $5,000,000 floor is the page, not a filter, so it cannot be cleared here. Decision to confirm.</span>
   <ul class="grid" style="margin-top:22px">
     <li class="card"><a class="ca" href="/yachts/2021-benetti-oasis-40m-7/"><span class="ci"><span class="ph">B</span><span class="badge">3D tour</span></span><span class="cl">2021 Benetti Oasis 40M</span></a><span class="price">$28,500,000</span><span class="cm">Fort Lauderdale, FL</span><span class="seller">Benetti Americas</span></li>
     <li class="card"><a class="ca" href="/yachts/2018-riva-88-domino-6/"><span class="ci"><span class="ph">R</span></span><span class="cl">2018 Riva 88 Domino</span></a><span class="price">$6,400,000</span><span class="cm">Cannes, France</span><span class="seller">Riva Monaco</span></li>
