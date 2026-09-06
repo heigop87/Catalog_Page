@@ -46,7 +46,7 @@ h2{font:800 clamp(22px,2.6vw,30px) Manrope;letter-spacing:-.02em;color:var(--ink
 .vwb.on .dot{background:#7bdcb5}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(123,220,181,.6)}70%{box-shadow:0 0 0 9px rgba(123,220,181,0)}100%{box-shadow:0 0 0 0 rgba(123,220,181,0)}}
 @media (prefers-reduced-motion:reduce){.vwb .dot{animation:none}}
-.fbar.sp{margin:14px 0 0;box-shadow:0 14px 30px -22px rgba(20,20,31,.28)}
+.fbar.sp{margin:18px 0 6px;box-shadow:0 14px 30px -22px rgba(20,20,31,.28)}
 body.notes .fbar{box-shadow:0 0 0 2px #f6e2c2,0 18px 40px -24px rgba(20,20,31,.28)}
 .crow{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin:18px 0 14px;flex-wrap:wrap}
 .sortc{display:inline-flex;align-items:center;gap:5px;font:700 14px Manrope;color:var(--ink);cursor:pointer} .sortc .material-symbols-outlined{font-size:19px;color:var(--muted)}
@@ -100,11 +100,7 @@ footer.site{background:#fff;border-top:1px solid rgba(4,0,17,.08);margin-top:cla
 
 <!-- ═══════════════ YACHTS PILLAR ═══════════════ -->
 <section class="view" id="v-y"><div class="wrap">
-  <nav class="bc" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span>Yachts for Sale <span class="n">BreadcrumbList on both pillars</span></nav>
-  <h1>Yachts for Sale</h1>
-  <span class="n blk">H1, the only one. It is the exact match term and never changes when a filter is applied. Section 2.</span>
-  <span class="n blk stop">NO COPY BETWEEN THE H1 AND THE TOOLBAR. First viewport is breadcrumb, H1, toolbar, count, grid. Descriptive copy lives in the lower block. Section 3.</span>
-
+  <span class="n blk">The bar sits directly under the header on every catalog surface, above the breadcrumb and the H1, exactly as the design has it.</span>
   <div class="fbar">
     <div class="fbf"><span class="fbp">Price</span><span class="material-symbols-outlined">expand_more</span></div>
     <div class="fbf"><span class="fbp">Make &amp; Model</span><span class="material-symbols-outlined">expand_more</span></div>
@@ -113,6 +109,12 @@ footer.site{background:#fff;border-top:1px solid rgba(4,0,17,.08);margin-top:cla
     <div class="fbf more"><span class="material-symbols-outlined">tune</span>More Filters</div>
     <div class="vw" role="group" aria-label="View"><a class="vwb map" href="/search/"><span class="dot"></span>Map</a><span class="vwb on">Grid</span></div>
   </div>
+  <span class="n blk">The bar sits directly under the header on every catalog surface, above the breadcrumb and the H1, as the design has it. Price, Make &amp; Model, Length and Location are the four controls that travel with the user from Home. Everything else is behind More Filters. Map and Grid is a view toggle: on a pillar, Map hands off to /search/. Sort is not in the bar.</span>
+  <nav class="bc" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span>Yachts for Sale <span class="n">BreadcrumbList on both pillars</span></nav>
+  <h1>Yachts for Sale</h1>
+  <span class="n blk">H1, the only one. It is the exact match term and never changes when a filter is applied. Section 2.</span>
+  <span class="n blk stop">NO COPY BETWEEN THE H1 AND THE TOOLBAR. First viewport is breadcrumb, H1, toolbar, count, grid. Descriptive copy lives in the lower block. Section 3.</span>
+
   <span class="n blk">SAME BAR AS HOME. Price, Make &amp; Model, Length and Location are the identical component in the identical order, and the user's selections travel with them from Home into the pillar and on into the split view. One shared state, one shared control. Section 4.</span>
   <span class="n blk">Type, Year and Sort are catalog only refinements and sit after the divider. They do not exist on Home so nothing travels into them.</span>
   <span class="n blk">Home SUBMITS the bar and lands on /search/. A pillar FILTERS IN PLACE. Either way the state is client state: never in the URL, never an anchor, never in a sitemap.</span>
@@ -158,11 +160,6 @@ footer.site{background:#fff;border-top:1px solid rgba(4,0,17,.08);margin-top:cla
 
 <!-- ═══════════════ BOATS PILLAR ═══════════════ -->
 <section class="view" id="v-b"><div class="wrap">
-  <nav class="bc" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span>Boats for Sale</nav>
-  <h1>Boats for Sale</h1>
-  <span class="n blk">Same structure, same order, its own H1, counts, inventory and boat worded module headings. The 38 ft cut is a query default, never mentioned in visible copy. Section 2.</span>
-  <span class="n blk stop">Neither pillar borrows the other's noun in a heading. No Yachts for Sale H2 and no yacht worded block on this page. Gate G3.</span>
-
   <div class="fbar">
     <div class="fbf"><span class="fbp">Price</span><span class="material-symbols-outlined">expand_more</span></div>
     <div class="fbf"><span class="fbp">Make &amp; Model</span><span class="material-symbols-outlined">expand_more</span></div>
@@ -171,6 +168,11 @@ footer.site{background:#fff;border-top:1px solid rgba(4,0,17,.08);margin-top:cla
     <div class="fbf more"><span class="material-symbols-outlined">tune</span>More Filters</div>
     <div class="vw" role="group" aria-label="View"><a class="vwb map" href="/search/"><span class="dot"></span>Map</a><span class="vwb on">Grid</span></div>
   </div>
+  <nav class="bc" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span>Boats for Sale</nav>
+  <h1>Boats for Sale</h1>
+  <span class="n blk">Same structure, same order, its own H1, counts, inventory and boat worded module headings. The 38 ft cut is a query default, never mentioned in visible copy. Section 2.</span>
+  <span class="n blk stop">Neither pillar borrows the other's noun in a heading. No Yachts for Sale H2 and no yacht worded block on this page. Gate G3.</span>
+
   <div class="crow"><p class="count">612 boats for sale</p><span class="sortc">Date Added: Descending<span class="material-symbols-outlined">expand_more</span></span></div>
   <ul class="grid">
     <li class="card"><a class="ca" href="/boats/2023-boston-whaler-280-outrage-1/"><span class="ci"><span class="ph">B</span></span><span class="cl">2023 Boston Whaler 280 Outrage</span></a><span class="price">$289,000</span><span class="cm">Miami, FL</span><span class="seller">MarineMax</span></li>
@@ -205,6 +207,15 @@ footer.site{background:#fff;border-top:1px solid rgba(4,0,17,.08);margin-top:cla
 <!-- ═══════════════ SPLIT VIEW ═══════════════ -->
 <section class="view" id="v-s">
   <span class="n blk" style="margin:14px auto 0;max-width:1200px;padding:0 24px">URL /search/. /vessels-for-sale/ 301s to it. noindex follow, out of every sitemap, enforced as a router path rule. Never linked from nav or a browse module. Section 6.</span>
+<div class="wrap">  <div class="fbar sp">
+    <div class="fbf"><span class="fbp">Price</span><span class="material-symbols-outlined">expand_more</span></div>
+    <div class="fbf"><span class="fbp">Make &amp; Model</span><span class="material-symbols-outlined">expand_more</span></div>
+    <div class="fbf"><span class="fbl">Length</span><span class="fbv">50 – 80 ft</span><span class="material-symbols-outlined">expand_more</span></div>
+    <div class="fbf"><span class="fbl">Location</span><span class="fbv">Miami, FL</span><span class="material-symbols-outlined">expand_more</span></div>
+    <div class="fbf more"><span class="material-symbols-outlined">tune</span>More Filters</div>
+    <div class="vw" role="group" aria-label="View"><span class="vwb on">Map</span><a class="vwb" href="/yachts-for-sale/">Grid</a></div>
+  </div>
+</div>
   <div class="split">
     <div class="spleft">
       <nav class="bc" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/locations/">Locations</a><span>›</span>Miami, FL</nav>
@@ -213,14 +224,6 @@ footer.site{background:#fff;border-top:1px solid rgba(4,0,17,.08);margin-top:cla
       <span class="n blk">ONE H1. It names the entity the user arrived at. Filters, sort, pan and zoom never rewrite it. Zoom level never drives it. Section 6.</span>
       <a class="about" href="/miami-fl-yachts-for-sale/">Learn more about Miami, FL<span class="material-symbols-outlined">arrow_forward</span></a>
       <span class="n blk">The only on-site door to the location page. Everything else on this surface stays in the split view.</span>
-      <div class="fbar sp">
-        <div class="fbf"><span class="fbp">Price</span><span class="material-symbols-outlined">expand_more</span></div>
-        <div class="fbf"><span class="fbp">Make &amp; Model</span><span class="material-symbols-outlined">expand_more</span></div>
-        <div class="fbf"><span class="fbl">Length</span><span class="fbv">50 – 80 ft</span><span class="material-symbols-outlined">expand_more</span></div>
-        <div class="fbf"><span class="fbl">Location</span><span class="fbv">Miami, FL</span><span class="material-symbols-outlined">expand_more</span></div>
-        <div class="fbf more"><span class="material-symbols-outlined">tune</span>More Filters</div>
-        <div class="vw" role="group" aria-label="View"><span class="vwb on">Map</span><a class="vwb" href="/yachts-for-sale/">Grid</a></div>
-      </div>
       <span class="n blk">The same bar again, arriving with whatever the user set on Home or on the pillar. Nothing resets on the way in. Here it shows two of them set, so each field carries its label above its value.</span>
       <div class="crow"><p class="count">Avg. price $1.8M – $5.9M</p><span class="sortc">Date Added: Descending<span class="material-symbols-outlined">expand_more</span></span></div>
       <div class="chips"><span class="chipx">Miami, FL<span class="material-symbols-outlined">close</span></span><span class="chipx">Flybridge<span class="material-symbols-outlined">close</span></span><span class="chipx">$1M – $5M<span class="material-symbols-outlined">close</span></span><span class="chipx">50–80 ft<span class="material-symbols-outlined">close</span></span></div>
@@ -247,11 +250,6 @@ footer.site{background:#fff;border-top:1px solid rgba(4,0,17,.08);margin-top:cla
 
 <!-- ═══════════════ $5M COLLECTION ═══════════════ -->
 <section class="view" id="v-m"><div class="wrap">
-  <nav class="bc" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/yachts-for-sale/">Yachts for Sale</a><span>›</span>Yachts for Sale Over $5 Million</nav>
-  <h1>Yachts for Sale Over $5 Million</h1>
-  <span class="n blk">index, follow, self canonical, out of every XML sitemap. Drops to noindex, follow if it holds under 20 listings for 30 days. Section 7.</span>
-  <span class="n blk">Eligibility: verified current list price at or above $5,000,000 USD from the same normalised price source as the catalog. Hidden price hulls qualify on internal price and render Contact for Pricing. Membership refreshes daily. No curation, no paid placement.</span>
-  <span class="n blk stop">NO RESULT COUNT above the grid and no aggregate count in schema.</span>
   <div class="fbar">
     <div class="fbf"><span class="fbp">Price</span><span class="material-symbols-outlined">expand_more</span></div>
     <div class="fbf"><span class="fbp">Make &amp; Model</span><span class="material-symbols-outlined">expand_more</span></div>
@@ -260,6 +258,11 @@ footer.site{background:#fff;border-top:1px solid rgba(4,0,17,.08);margin-top:cla
     <div class="fbf more"><span class="material-symbols-outlined">tune</span>More Filters</div>
     <div class="vw" role="group" aria-label="View"><a class="vwb map" href="/search/"><span class="dot"></span>Map</a><span class="vwb on">Grid</span></div>
   </div>
+  <nav class="bc" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><a href="/yachts-for-sale/">Yachts for Sale</a><span>›</span>Yachts for Sale Over $5 Million</nav>
+  <h1>Yachts for Sale Over $5 Million</h1>
+  <span class="n blk">index, follow, self canonical, out of every XML sitemap. Drops to noindex, follow if it holds under 20 listings for 30 days. Section 7.</span>
+  <span class="n blk">Eligibility: verified current list price at or above $5,000,000 USD from the same normalised price source as the catalog. Hidden price hulls qualify on internal price and render Contact for Pricing. Membership refreshes daily. No curation, no paid placement.</span>
+  <span class="n blk stop">NO RESULT COUNT above the grid and no aggregate count in schema.</span>
   <span class="n blk">The same bar. It refines inside the collection and never widens it: the $5,000,000 floor is the page, not a filter, so it cannot be cleared here. Decision to confirm.</span>
   <ul class="grid" style="margin-top:22px">
     <li class="card"><a class="ca" href="/yachts/2021-benetti-oasis-40m-7/"><span class="ci"><span class="ph">B</span><span class="badge">3D tour</span></span><span class="cl">2021 Benetti Oasis 40M</span></a><span class="price">$28,500,000</span><span class="cm">Fort Lauderdale, FL</span><span class="seller">Benetti Americas</span></li>
