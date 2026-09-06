@@ -24,28 +24,33 @@ body.notes .n.stop{background:#ffecec;color:#b3261e;border-color:#f3c9c9}
 header.site{background:#fff;border-bottom:1px solid rgba(4,0,17,.08);position:sticky;top:0;z-index:20} .bar{display:flex;align-items:center;justify-content:space-between;gap:20px;height:62px}
 .logo{font:800 20px Manrope;letter-spacing:-.02em;color:var(--ink);text-decoration:none} nav.main{display:flex;gap:26px} nav.main a{font:700 14px Manrope;color:var(--text);text-decoration:none}
 .util{display:flex;align-items:center;gap:16px;font:700 13px Manrope} .util a{text-decoration:none;color:var(--text)} .util .login{background:var(--purple);color:#fff;border-radius:9999px;padding:9px 16px;border:none;font:800 13px Manrope;cursor:pointer}
-.hsearch{flex:1;max-width:420px;display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:9999px;padding:9px 16px;background:#fff;font:600 13px Manrope;color:var(--faint)}
-.hsearch button{border:none;background:none;padding:0;color:var(--faint);cursor:pointer;display:inline-flex}
 /* views */
 .view{display:none} body[data-view="y"] #v-y,body[data-view="b"] #v-b,body[data-view="s"] #v-s,body[data-view="m"] #v-m{display:block}
 /* breadcrumb + h1 */
 .bc{padding:18px 0 0;font:600 13px Manrope;color:var(--muted)} .bc a{text-decoration:none;color:var(--muted)} .bc span{color:var(--faint);margin:0 6px}
 h1{font:800 clamp(26px,3.4vw,38px) Manrope;letter-spacing:-.025em;line-height:1.08;color:var(--ink);margin:12px 0 0}
 h2{font:800 clamp(22px,2.6vw,30px) Manrope;letter-spacing:-.02em;color:var(--ink);margin:0}
-/* toolbar */
-.toolbar{display:flex;align-items:center;gap:10px;margin:20px 0 0;padding:12px 0;flex-wrap:wrap;border-bottom:1px solid var(--line)}
-.fchip{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line);border-radius:9999px;padding:9px 14px;font:700 13px Manrope;color:var(--ink);white-space:nowrap} .fchip .material-symbols-outlined{font-size:18px;color:var(--faint)}
-.fchip.on{background:var(--chip);border-color:var(--chipline);color:var(--purple)}
-.toolbar .spacer{flex:1}
-.toolbar .tsep{width:1px;height:26px;background:var(--line);margin:0 4px}
-.toolbar.sp{border-bottom:none;padding:8px 0 0;margin:14px 0 0}
-.fchip.travel{border-color:var(--chipline)}
-body.notes .fchip.travel{box-shadow:0 0 0 2px #f6e2c2}
-.mapbtn{position:relative;display:inline-flex;align-items:center;gap:7px;background:var(--purple);color:#fff;border:none;border-radius:9999px;padding:10px 18px;font:800 13px Manrope;cursor:pointer;text-decoration:none}
-.mapbtn i{width:8px;height:8px;border-radius:50%;background:#7bdcb5;display:inline-block;box-shadow:0 0 0 0 rgba(123,220,181,.7);animation:pulse 1.8s infinite}
+/* filter bar */
+.fbar{display:flex;align-items:stretch;gap:0;background:#fff;border:1px solid var(--line);border-radius:9999px;box-shadow:0 18px 40px -24px rgba(20,20,31,.28);padding:6px 6px 6px 10px;margin:18px 0 0;overflow-x:auto;scrollbar-width:none}
+.fbar::-webkit-scrollbar{display:none}
+.fbf{position:relative;display:flex;align-items:center;gap:8px;padding:10px 20px;font:600 15px Manrope;color:var(--ink);white-space:nowrap;cursor:pointer;flex-direction:row}
+.fbf+.fbf::before{content:"";position:absolute;left:0;top:9px;bottom:9px;width:1px;background:var(--line)}
+.fbf .material-symbols-outlined{font-size:20px;color:var(--muted)}
+.fbf .fbp{color:var(--muted);font-weight:600}
+.fbf .fbl{position:absolute;top:6px;left:20px;font:600 12px Manrope;color:var(--muted)} .fbf .fbv{font:700 15px Manrope;color:var(--ink);margin-top:12px}
+.fbf.more{gap:9px;font-weight:600}
+.vw{display:flex;align-items:center;background:#fff;border-radius:9999px;margin-left:auto;padding:0 0 0 8px}
+.vwb{display:inline-flex;align-items:center;gap:7px;border-radius:9999px;padding:11px 22px;font:700 15px Manrope;color:var(--ink);text-decoration:none;cursor:pointer}
+.vwb.on{background:var(--ink);color:#fff}
+.vwb .dot{width:8px;height:8px;border-radius:50%;background:#7bdcb5;box-shadow:0 0 0 0 rgba(123,220,181,.7);animation:pulse 1.8s infinite}
+.vwb.on .dot{background:#7bdcb5}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(123,220,181,.6)}70%{box-shadow:0 0 0 9px rgba(123,220,181,0)}100%{box-shadow:0 0 0 0 rgba(123,220,181,0)}}
-@media (prefers-reduced-motion:reduce){.mapbtn i{animation:none}}
-.count{margin:18px 0 14px;font:700 14px Manrope;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){.vwb .dot{animation:none}}
+.fbar.sp{margin:14px 0 0;box-shadow:0 14px 30px -22px rgba(20,20,31,.28)}
+body.notes .fbar{box-shadow:0 0 0 2px #f6e2c2,0 18px 40px -24px rgba(20,20,31,.28)}
+.crow{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin:18px 0 14px;flex-wrap:wrap}
+.sortc{display:inline-flex;align-items:center;gap:5px;font:700 14px Manrope;color:var(--ink);cursor:pointer} .sortc .material-symbols-outlined{font-size:19px;color:var(--muted)}
+.count{margin:0;font:700 14px Manrope;color:var(--muted)}
 /* grid */
 .grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .card{position:relative;background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;box-shadow:0 20px 40px -28px rgba(20,20,31,.11);overflow:hidden}
@@ -78,7 +83,7 @@ footer.site{background:#fff;border-top:1px solid rgba(4,0,17,.08);margin-top:cla
 .grid.two{grid-template-columns:repeat(2,1fr);margin-top:18px}
 .toast{position:fixed;left:50%;bottom:74px;transform:translateX(-50%);background:#1a0b33;color:#fff;font:600 13px Manrope;padding:11px 16px;border-radius:12px;opacity:0;pointer-events:none;transition:opacity .2s;max-width:92vw;text-align:center;z-index:60} .toast.show{opacity:1}
 @media (max-width:1100px){.grid{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:900px){nav.main,.hsearch{display:none} .grid,.grid.two{grid-template-columns:repeat(2,1fr)} .split{grid-template-columns:1fr;height:auto} .spright{height:360px} .cols,.fcols{grid-template-columns:1fr 1fr}}
+@media (max-width:900px){nav.main{display:none} .grid,.grid.two{grid-template-columns:repeat(2,1fr)} .split{grid-template-columns:1fr;height:auto} .spright{height:360px} .cols,.fcols{grid-template-columns:1fr 1fr}}
 @media (max-width:560px){.grid,.grid.two{grid-template-columns:1fr}}
 </style></head>
 <body data-view="y">
@@ -86,13 +91,12 @@ footer.site{background:#fff;border-top:1px solid rgba(4,0,17,.08);margin-top:cla
 <header class="site"><div class="wrap bar">
   <a class="logo" href="/" aria-label="YachtWay">YachtWay</a>
   <nav class="main" aria-label="Main"><a href="/yachts-for-sale/">Yachts for Sale</a><a href="/places-to-go/">Places to Go</a><a href="/boat-loans/">Boat Loans</a><a href="/boat-insurance/">Boat Insurance</a></nav>
-  <form class="hsearch" action="/search/" method="get" role="search"><button type="submit" aria-label="Search"><span class="material-symbols-outlined">search</span></button><span>Make, model or place</span></form>
   <div class="util"><span>EN</span><a href="/pro">Sell</a><button class="login" type="button">Log in or sign up</button></div>
 </div></header>
-<span class="n blk" style="margin:10px auto;max-width:1200px;padding:0 clamp(20px,4vw,48px)">Site search is a form submission. It always lands on /search/, never on a pillar. Section 6.</span>
+<span class="n blk" style="margin:10px auto;max-width:1200px;padding:0 clamp(20px,4vw,48px)">NO SEARCH CONTROL IN THE HEADER. The filter bar below is the only search and filter surface on a catalog page. Section 4.</span>
 
 <main>
-<span class="n blk" style="margin:10px auto 0;max-width:1200px;padding:0 clamp(20px,4vw,48px)">FILTER BAR: the four ringed controls, Price, Make &amp; Model, Length and Location, are the same component as the Home hero search. Their state travels with the user across Home, both pillars, the split view and the $5M collection. Type, Year and Sort sit after the divider and are catalog only.</span>
+<span class="n blk" style="margin:10px auto 0;max-width:1200px;padding:0 clamp(20px,4vw,48px)">FILTER BAR: one component, ringed when Notes is on. Price, Make &amp; Model, Length and Location are the same four controls as the Home hero search and their state travels with the user across Home, both pillars, the split view and the $5M collection. Everything else sits behind More Filters. Map and Grid is a view toggle: on a pillar, Map hands off to /search/. Sort is not in the bar; it sits beside the result count. There is NO search control in the header.</span>
 
 <!-- ═══════════════ YACHTS PILLAR ═══════════════ -->
 <section class="view" id="v-y"><div class="wrap">
@@ -101,17 +105,13 @@ footer.site{background:#fff;border-top:1px solid rgba(4,0,17,.08);margin-top:cla
   <span class="n blk">H1, the only one. It is the exact match term and never changes when a filter is applied. Section 2.</span>
   <span class="n blk stop">NO COPY BETWEEN THE H1 AND THE TOOLBAR. First viewport is breadcrumb, H1, toolbar, count, grid. Descriptive copy lives in the lower block. Section 3.</span>
 
-  <div class="toolbar">
-    <span class="fchip travel">Price<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="fchip travel">Make &amp; Model<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="fchip travel">Length<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="fchip travel">Location<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="tsep"></span>
-    <span class="fchip">Type<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="fchip">Year<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="fchip">Sort<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="spacer"></span>
-    <a class="mapbtn" href="/search/" id="mapY"><i></i><span class="material-symbols-outlined">map</span>Map</a>
+  <div class="fbar">
+    <div class="fbf"><span class="fbp">Price</span><span class="material-symbols-outlined">expand_more</span></div>
+    <div class="fbf"><span class="fbp">Make &amp; Model</span><span class="material-symbols-outlined">expand_more</span></div>
+    <div class="fbf"><span class="fbp">Length</span><span class="material-symbols-outlined">expand_more</span></div>
+    <div class="fbf"><span class="fbp">Location</span><span class="material-symbols-outlined">expand_more</span></div>
+    <div class="fbf more"><span class="material-symbols-outlined">tune</span>More Filters</div>
+    <div class="vw" role="group" aria-label="View"><a class="vwb map" href="/search/"><span class="dot"></span>Map</a><span class="vwb on">Grid</span></div>
   </div>
   <span class="n blk">SAME BAR AS HOME. Price, Make &amp; Model, Length and Location are the identical component in the identical order, and the user's selections travel with them from Home into the pillar and on into the split view. One shared state, one shared control. Section 4.</span>
   <span class="n blk">Type, Year and Sort are catalog only refinements and sit after the divider. They do not exist on Home so nothing travels into them.</span>
@@ -119,7 +119,8 @@ footer.site{background:#fff;border-top:1px solid rgba(4,0,17,.08);margin-top:cla
   <span class="n blk">Map is the page's one authored pre-filtered link, to /search/?… carrying the current filters, noindex follow. The pulsing dot runs until that viewer opens the map once, stored per browser. Static under prefers-reduced-motion.</span>
   <span class="n blk stop">The pillar renders NO map pane. No map library, tile or request before first paint. Gate G6.</span>
 
-  <p class="count">1,284 yachts for sale</p>
+  <div class="crow"><p class="count">1,284 yachts for sale</p><span class="sortc">Date Added: Descending<span class="material-symbols-outlined">expand_more</span></span></div>
+  <span class="n blk">Sort lives here, beside the count, not in the filter bar. Everything else that is not one of the four travelling controls lives behind More Filters.</span>
   <span class="n blk">Result count above the grid, outside every anchor. Section 5.</span>
 
   <ul class="grid">
@@ -162,19 +163,15 @@ footer.site{background:#fff;border-top:1px solid rgba(4,0,17,.08);margin-top:cla
   <span class="n blk">Same structure, same order, its own H1, counts, inventory and boat worded module headings. The 38 ft cut is a query default, never mentioned in visible copy. Section 2.</span>
   <span class="n blk stop">Neither pillar borrows the other's noun in a heading. No Yachts for Sale H2 and no yacht worded block on this page. Gate G3.</span>
 
-  <div class="toolbar">
-    <span class="fchip travel">Price<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="fchip travel">Make &amp; Model<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="fchip travel">Length<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="fchip travel">Location<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="tsep"></span>
-    <span class="fchip">Type<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="fchip">Year<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="fchip">Sort<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="spacer"></span>
-    <a class="mapbtn" href="/search/"><i></i><span class="material-symbols-outlined">map</span>Map</a>
+  <div class="fbar">
+    <div class="fbf"><span class="fbp">Price</span><span class="material-symbols-outlined">expand_more</span></div>
+    <div class="fbf"><span class="fbp">Make &amp; Model</span><span class="material-symbols-outlined">expand_more</span></div>
+    <div class="fbf"><span class="fbp">Length</span><span class="material-symbols-outlined">expand_more</span></div>
+    <div class="fbf"><span class="fbp">Location</span><span class="material-symbols-outlined">expand_more</span></div>
+    <div class="fbf more"><span class="material-symbols-outlined">tune</span>More Filters</div>
+    <div class="vw" role="group" aria-label="View"><a class="vwb map" href="/search/"><span class="dot"></span>Map</a><span class="vwb on">Grid</span></div>
   </div>
-  <p class="count">612 boats for sale</p>
+  <div class="crow"><p class="count">612 boats for sale</p><span class="sortc">Date Added: Descending<span class="material-symbols-outlined">expand_more</span></span></div>
   <ul class="grid">
     <li class="card"><a class="ca" href="/boats/2023-boston-whaler-280-outrage-1/"><span class="ci"><span class="ph">B</span></span><span class="cl">2023 Boston Whaler 280 Outrage</span></a><span class="price">$289,000</span><span class="cm">Miami, FL</span><span class="seller">MarineMax</span></li>
     <li class="card"><a class="ca" href="/boats/2022-grady-white-canyon-336-2/"><span class="ci"><span class="ph">G</span><span class="badge">3D tour</span></span><span class="cl">2022 Grady-White Canyon 336</span></a><span class="price">$415,000</span><span class="cm">Naples, FL</span><span class="seller">Galati Yacht Sales</span></li>
@@ -216,17 +213,16 @@ footer.site{background:#fff;border-top:1px solid rgba(4,0,17,.08);margin-top:cla
       <span class="n blk">ONE H1. It names the entity the user arrived at. Filters, sort, pan and zoom never rewrite it. Zoom level never drives it. Section 6.</span>
       <a class="about" href="/miami-fl-yachts-for-sale/">Learn more about Miami, FL<span class="material-symbols-outlined">arrow_forward</span></a>
       <span class="n blk">The only on-site door to the location page. Everything else on this surface stays in the split view.</span>
-      <div class="toolbar sp">
-        <span class="fchip travel on">Price<span class="material-symbols-outlined">expand_more</span></span>
-        <span class="fchip travel">Make &amp; Model<span class="material-symbols-outlined">expand_more</span></span>
-        <span class="fchip travel on">Length<span class="material-symbols-outlined">expand_more</span></span>
-        <span class="fchip travel on">Location<span class="material-symbols-outlined">expand_more</span></span>
-        <span class="tsep"></span>
-        <span class="fchip on">Type<span class="material-symbols-outlined">expand_more</span></span>
-        <span class="fchip">Year<span class="material-symbols-outlined">expand_more</span></span>
-        <span class="fchip">Sort<span class="material-symbols-outlined">expand_more</span></span>
+      <div class="fbar sp">
+        <div class="fbf"><span class="fbp">Price</span><span class="material-symbols-outlined">expand_more</span></div>
+        <div class="fbf"><span class="fbp">Make &amp; Model</span><span class="material-symbols-outlined">expand_more</span></div>
+        <div class="fbf"><span class="fbl">Length</span><span class="fbv">50 – 80 ft</span><span class="material-symbols-outlined">expand_more</span></div>
+        <div class="fbf"><span class="fbl">Location</span><span class="fbv">Miami, FL</span><span class="material-symbols-outlined">expand_more</span></div>
+        <div class="fbf more"><span class="material-symbols-outlined">tune</span>More Filters</div>
+        <div class="vw" role="group" aria-label="View"><span class="vwb on">Map</span><a class="vwb" href="/yachts-for-sale/">Grid</a></div>
       </div>
-      <span class="n blk">The same bar again, arriving with whatever the user set on Home or on the pillar. Nothing resets on the way in.</span>
+      <span class="n blk">The same bar again, arriving with whatever the user set on Home or on the pillar. Nothing resets on the way in. Here it shows two of them set, so each field carries its label above its value.</span>
+      <div class="crow"><p class="count">Avg. price $1.8M – $5.9M</p><span class="sortc">Date Added: Descending<span class="material-symbols-outlined">expand_more</span></span></div>
       <div class="chips"><span class="chipx">Miami, FL<span class="material-symbols-outlined">close</span></span><span class="chipx">Flybridge<span class="material-symbols-outlined">close</span></span><span class="chipx">$1M – $5M<span class="material-symbols-outlined">close</span></span><span class="chipx">50–80 ft<span class="material-symbols-outlined">close</span></span></div>
       <span class="n blk">Active filters and the selected place render as chips above the cards in the left column, not on the filter bar. Clearing the place chip drops the H1 to Yachts for Sale.</span>
       <ul class="grid two">
@@ -256,17 +252,13 @@ footer.site{background:#fff;border-top:1px solid rgba(4,0,17,.08);margin-top:cla
   <span class="n blk">index, follow, self canonical, out of every XML sitemap. Drops to noindex, follow if it holds under 20 listings for 30 days. Section 7.</span>
   <span class="n blk">Eligibility: verified current list price at or above $5,000,000 USD from the same normalised price source as the catalog. Hidden price hulls qualify on internal price and render Contact for Pricing. Membership refreshes daily. No curation, no paid placement.</span>
   <span class="n blk stop">NO RESULT COUNT above the grid and no aggregate count in schema.</span>
-  <div class="toolbar">
-    <span class="fchip travel">Price<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="fchip travel">Make &amp; Model<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="fchip travel">Length<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="fchip travel">Location<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="tsep"></span>
-    <span class="fchip">Type<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="fchip">Year<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="fchip">Sort<span class="material-symbols-outlined">expand_more</span></span>
-    <span class="spacer"></span>
-    <a class="mapbtn" href="/search/"><i></i><span class="material-symbols-outlined">map</span>Map</a>
+  <div class="fbar">
+    <div class="fbf"><span class="fbp">Price</span><span class="material-symbols-outlined">expand_more</span></div>
+    <div class="fbf"><span class="fbp">Make &amp; Model</span><span class="material-symbols-outlined">expand_more</span></div>
+    <div class="fbf"><span class="fbp">Length</span><span class="material-symbols-outlined">expand_more</span></div>
+    <div class="fbf"><span class="fbp">Location</span><span class="material-symbols-outlined">expand_more</span></div>
+    <div class="fbf more"><span class="material-symbols-outlined">tune</span>More Filters</div>
+    <div class="vw" role="group" aria-label="View"><a class="vwb map" href="/search/"><span class="dot"></span>Map</a><span class="vwb on">Grid</span></div>
   </div>
   <span class="n blk">The same bar. It refines inside the collection and never widens it: the $5,000,000 floor is the page, not a filter, so it cannot be cleared here. Decision to confirm.</span>
   <ul class="grid" style="margin-top:22px">
@@ -281,19 +273,7 @@ footer.site{background:#fff;border-top:1px solid rgba(4,0,17,.08);margin-top:cla
   </ul>
   <nav class="pager" aria-label="Pagination"><a href="/yachts-for-sale/over-5-million/" aria-current="page">1</a><a href="/yachts-for-sale/over-5-million/page/2/">2</a><a href="/yachts-for-sale/over-5-million/page/2/">Next</a></nav>
 
-  <section class="blk">
-    <div class="head"><h2>Browse Yachts Over $5 Million by Type</h2></div>
-    <ul class="rail"><li class="card"><a class="ca" href="/superyachts-for-sale/"><span class="ci"><span class="ph">S</span></span><span class="cl">Superyachts</span></a><span class="cm">61 over $5M</span></li><li class="card"><a class="ca" href="/motor-yachts-for-sale/"><span class="ci"><span class="ph">M</span></span><span class="cl">Motor Yachts</span></a><span class="cm">48 over $5M</span></li><li class="card"><a class="ca" href="/flybridge-yachts-for-sale/"><span class="ci"><span class="ph">F</span></span><span class="cl">Flybridge Yachts</span></a><span class="cm">27 over $5M</span></li><li class="card"><a class="ca" href="/expedition-yachts-for-sale/"><span class="ci"><span class="ph">E</span></span><span class="cl">Expedition Yachts</span></a><span class="cm">14 over $5M</span></li><li class="card"><a class="ca" href="/sailing-yachts-for-sale/"><span class="ci"><span class="ph">S</span></span><span class="cl">Sailing Yachts</span></a><span class="cm">11 over $5M</span></li><li class="card"><a class="ca" href="/sailing-catamarans-for-sale/"><span class="ci"><span class="ph">S</span></span><span class="cl">Sailing Catamarans</span></a><span class="cm">6 over $5M</span></li></ul>
-  </section>
-  <section class="blk">
-    <div class="head"><h2>Browse Yachts Over $5 Million by Location</h2></div>
-    <ul class="rail"><li class="card"><a class="ca divert" data-stem="fort-lauderdale-fl" href="/fort-lauderdale-fl-yachts-for-sale/"><span class="ci"><span class="ph">F</span></span><span class="cl">Fort Lauderdale, FL</span></a><span class="cm">38 over $5M</span></li><li class="card"><a class="ca divert" data-stem="monaco" href="/monaco-yachts-for-sale/"><span class="ci"><span class="ph">M</span></span><span class="cl">Monaco</span></a><span class="cm">26 over $5M</span></li><li class="card"><a class="ca divert" data-stem="miami-fl" href="/miami-fl-yachts-for-sale/"><span class="ci"><span class="ph">M</span></span><span class="cl">Miami, FL</span></a><span class="cm">21 over $5M</span></li><li class="card"><a class="ca divert" data-stem="cannes-france" href="/cannes-france-yachts-for-sale/"><span class="ci"><span class="ph">C</span></span><span class="cl">Cannes, France</span></a><span class="cm">17 over $5M</span></li><li class="card"><a class="ca divert" data-stem="palma-spain" href="/palma-spain-yachts-for-sale/"><span class="ci"><span class="ph">P</span></span><span class="cl">Palma, Spain</span></a><span class="cm">12 over $5M</span></li><li class="card"><a class="ca divert" data-stem="newport-ri" href="/newport-ri-yachts-for-sale/"><span class="ci"><span class="ph">N</span></span><span class="cl">Newport, RI</span></a><span class="cm">9 over $5M</span></li></ul>
-  </section>
-  <section class="blk">
-    <div class="head"><h2>Browse Yachts Over $5 Million by Brand</h2></div>
-    <ul class="rail brands"><li class="card"><a class="ca" href="/brands/benetti-yachts-for-sale/"><span class="ci"><span class="ph">BE</span></span><span class="cl">Benetti</span></a><span class="cm">14 over $5M</span></li><li class="card"><a class="ca" href="/brands/sanlorenzo-yachts-for-sale/"><span class="ci"><span class="ph">SA</span></span><span class="cl">Sanlorenzo</span></a><span class="cm">11 over $5M</span></li><li class="card"><a class="ca" href="/brands/heesen-yachts-for-sale/"><span class="ci"><span class="ph">HE</span></span><span class="cl">Heesen</span></a><span class="cm">8 over $5M</span></li><li class="card"><a class="ca" href="/brands/westport-yachts-for-sale/"><span class="ci"><span class="ph">WE</span></span><span class="cl">Westport</span></a><span class="cm">7 over $5M</span></li><li class="card"><a class="ca" href="/brands/riva-yachts-for-sale/"><span class="ci"><span class="ph">RI</span></span><span class="cl">Riva</span></a><span class="cm">6 over $5M</span></li><li class="card"><a class="ca" href="/brands/pershing-yachts-for-sale/"><span class="ci"><span class="ph">PE</span></span><span class="cl">Pershing</span></a><span class="cm">5 over $5M</span></li></ul>
-    <span class="n blk">Module data source is the collection's eligible listings only, never the whole catalog. Top entities by qualifying count and demand. Structural cards refresh monthly or quarterly, the grid daily. A target appears only when it is built, canonical, indexable and past its own gate.</span>
-  </section>
+  <span class="n blk">No browse modules here either. The $5M collection is the grid, its lower block and the pre-footer. Section 8.</span>
 
   <section class="blk seo">
     <h2 style="margin-bottom:14px">Buying a Yacht Over $5 Million</h2>
